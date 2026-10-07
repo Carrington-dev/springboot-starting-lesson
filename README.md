@@ -29,3 +29,16 @@
 /actuator/threaddump
 /actuator/mappings
 ```
+
+### RUnning App From Commandline
+#### 1. Using jar file
+```bash
+java -jar <application_name>
+# java -jar demo-app
+```
+
+#### Using springboot mvnn plugin
+```bash
+./mvnw package
+./mvnw spring-boot:run
+```
