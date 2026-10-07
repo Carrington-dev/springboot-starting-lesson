@@ -9,4 +9,14 @@ public class SpringController {
     public String getHome() {
         return "Get Home Page";
     }
+
+    @GetMapping("/about")
+    public String getAbout() {
+        return "Get About Page";
+    }
+
+    @GetMapping("/workout")
+    public String getWorkout() {
+        return "Get Workout Page";
+    }
 }

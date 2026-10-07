@@ -6,5 +6,10 @@
 3. Get central repository for maven project https://central.sonatype.com
 4. mvnw is wrapper file that automatically download
 
-```declarative
+```xml
+<!--Automatic start on the server-->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-devtools</artifactId>
+</dependency>
 ```
