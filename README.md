@@ -33,8 +33,11 @@
 ### RUnning App From Commandline
 #### 1. Using jar file
 ```bash
+mvnw package
+# then
 java -jar <application_name>
-# java -jar demo-app
+# java -jar target/demo-app
+java -jar target\demo-app-0.0.1-SNAPSHOT.jar
 ```
 
 #### Using springboot mvnn plugin
