@@ -17,6 +17,6 @@ public class SpringController {
 
     @GetMapping("/workout")
     public String getWorkout() {
-        return "Get Workout Page";
+        return "Get Workout Auto Page";
     }
 }
