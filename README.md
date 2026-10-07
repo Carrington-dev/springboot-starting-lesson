@@ -25,4 +25,6 @@
 ```bash
 /actuator/info
 /actuator/health
+/actuator/beans
+/actuator/threaddump
 ```
