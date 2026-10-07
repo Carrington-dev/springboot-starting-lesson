@@ -21,10 +21,11 @@
     <artifactId>spring-boot-starter-actuator</artifactId>
 </dependency>
 ```
-
+### Actuator Endpoints
 ```bash
 /actuator/info
 /actuator/health
 /actuator/beans
 /actuator/threaddump
+/actuator/mappings
 ```
