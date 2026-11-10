@@ -4,6 +4,7 @@ import com.khano.demo_app.dao.EmployeeDAO;
 import com.khano.demo_app.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -26,6 +27,18 @@ public class EmployeeServiceImplementation implements EmployeeService{
     @Override
     public Employee getEmployeeById(int employeeId) {
         return employeeDAO.findById(employeeId);
+    }
+
+    @Transactional
+    @Override
+    public Employee save(Employee theEmployee) {
+        return employeeDAO.save(theEmployee);
+    }
+
+    @Transactional
+    @Override
+    public void deleteById(int theId) {
+        employeeDAO.deleteById(theId);
     }
 
 

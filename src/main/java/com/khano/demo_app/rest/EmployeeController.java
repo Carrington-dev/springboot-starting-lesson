@@ -4,10 +4,7 @@ import com.khano.demo_app.dao.EmployeeDAO;
 import com.khano.demo_app.entity.Employee;
 import com.khano.demo_app.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,6 +30,23 @@ public class EmployeeController {
     // expose /employees/id
     @GetMapping("/employees/{employeeId}")
     public Employee getEmployeeById(@PathVariable int employeeId){
-        return employeeService.getEmployeeById(employeeId);
+        Employee employee = employeeService.getEmployeeById(employeeId);
+        if (employee == null) {
+            throw new RuntimeException("Employee not found - " + employeeId);
+        }
+        return employee;
+    }
+
+    @PostMapping("/employees")
+    public Employee addEmployee(@RequestBody Employee theEmployee){
+        theEmployee.setId(0);
+        Employee employee = employeeService.save(theEmployee);
+        return employee;
+    }
+
+    @PutMapping("/employees")
+    public Employee updateEmployee(@RequestBody Employee theEmployee){
+        Employee employee = employeeService.save(theEmployee);
+        return employee;
     }
 }
